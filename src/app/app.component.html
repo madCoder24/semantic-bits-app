@@ -1,3 +1,14 @@
 <h1>
   {{title}}
 </h1>
+<div class="container">
+  <div class="row" *ngFor="let event of events">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">Adverse Event</h4>
+        <p class="card-text">Adverse event receipt date: {{ event.receiptDate }} and was received on {{ event.receiveDate }}</p>
+        <button [attr.id]="event._id" class="btn btn-danger" (click)="deleteEvent($event.target.id)">Delete Event</button>
+      </div>
+    </div>
+  </div>
+</div>
